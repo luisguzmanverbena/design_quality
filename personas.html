@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluation Personas</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 40px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 13px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #000;
+    border-bottom: 3px solid #000;
+    padding-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 32px;
+  }
+  .persona {
+    margin-bottom: 28px;
+    padding: 20px 24px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    page-break-inside: avoid;
+  }
+  .persona h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 4px;
+  }
+  .persona .role {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  .persona p {
+    margin-bottom: 8px;
+  }
+  .dimensions {
+    font-size: 12px;
+    color: #4466cc;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .dimensions span {
+    display: inline-block;
+    background: #f0f4ff;
+    border: 1px solid #ccd4ee;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin: 2px 4px 2px 0;
+  }
+  dl {
+    margin: 8px 0 0 0;
+    font-size: 12.5px;
+  }
+  dt {
+    font-weight: 700;
+    color: #333;
+    margin-top: 6px;
+  }
+  dd {
+    margin-left: 0;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<h1>Evaluation Personas</h1>
+<p class="subtitle">HCP Vault Dedicated — Cluster Overview</p>
+
+<div class="persona">
+  <h2>1. The Administrator</h2>
+  <div class="role">Daily Operator</div>
+  <p>Manages Vault itself — clusters, namespaces, auth methods, policies, replication, upgrades. CLI/Terraform-native, uses the UI for monitoring and debugging.</p>
+  <dl>
+    <dt>Primary goal</dt>
+    <dd>Confirm cluster health and take operational action without leaving the page.</dd>
+    <dt>Frustration trigger</dt>
+    <dd>Having to navigate elsewhere to answer basic operational questions (seal status, replication, standby count).</dd>
+    <dt>Interaction pattern</dt>
+    <dd>Daily visits. Scans for anomalies, then drills into specifics. Wants a control room, not a spec sheet.</dd>
+  </dl>
+  <div class="dimensions">Evaluated on: <span>Model &amp; Feedback</span> <span>Risk Audit</span> <span>Leverage &amp; Autonomy</span></div>
+</div>
+
+<div class="persona">
+  <h2>2. The Secret Consumer</h2>
+  <div class="role">Application Developer</div>
+  <p>Needs secrets for their app. Doesn't care how Vault works internally — just wants credentials delivered reliably. Explores via UI, automates via SDK/API.</p>
+  <dl>
+    <dt>Primary goal</dt>
+    <dd>Get to secrets or configure their app to retrieve them. Cluster details are irrelevant.</dd>
+    <dt>Frustration trigger</dt>
+    <dd>Landing on an infrastructure page when their job is "get a secret." Being shown actions they can't perform.</dd>
+    <dt>Interaction pattern</dt>
+    <dd>Occasional UI visits during setup. Once automated, never returns. The overview page is a waypoint, not a destination.</dd>
+  </dl>
+  <div class="dimensions">Evaluated on: <span>Model &amp; Feedback</span> <span>Reduction &amp; Necessity</span> <span>Leverage &amp; Autonomy</span></div>
+</div>
+
+<div class="persona">
+  <h2>3. The Governance &amp; Compliance Owner</h2>
+  <div class="role">Security / Policy Lead</div>
+  <p>Enforces access control, audits access patterns, ensures rotation policies are met. Needs to verify permissions, trace events, and produce compliance evidence.</p>
+  <dl>
+    <dt>Primary goal</dt>
+    <dd>Assess security posture at a glance — who has access, what's exposed, is the audit trail intact.</dd>
+    <dt>Frustration trigger</dt>
+    <dd>Risky configurations presented as neutral facts. High-privilege actions without governance context or audit visibility.</dd>
+    <dt>Interaction pattern</dt>
+    <dd>Periodic reviews. Needs to quickly determine "is this cluster configured securely?" and export evidence.</dd>
+  </dl>
+  <div class="dimensions">Evaluated on: <span>Risk Audit</span> <span>Model &amp; Feedback</span> <span>Leverage &amp; Autonomy</span></div>
+</div>
+
+<div class="persona">
+  <h2>4. The CI/CD Integrator</h2>
+  <div class="role">Platform / DevOps Engineer</div>
+  <p>Wires Vault into pipelines — dynamic credentials, lease management, secret injection at deploy time. Lives in automation, hits the UI when things break.</p>
+  <dl>
+    <dt>Primary goal</dt>
+    <dd>Get the connection details and auth method guidance needed to configure a pipeline.</dd>
+    <dt>Frustration trigger</dt>
+    <dd>Being guided toward manual/admin auth patterns (token generation) when machine auth (AppRole, K8s) is the correct approach.</dd>
+    <dt>Interaction pattern</dt>
+    <dd>One-time setup visit, then rare debugging visits. Needs the page to accelerate automation, not assume manual interaction.</dd>
+  </dl>
+  <div class="dimensions">Evaluated on: <span>Leverage &amp; Autonomy</span> <span>Risk Audit</span> <span>Model &amp; Feedback</span></div>
+</div>
+
+<div class="persona">
+  <h2>5. The Newcomer</h2>
+  <div class="role">First-Time User</div>
+  <p>First encounter with Vault. Needs to build a mental model of tokens, policies, auth methods, and secret engines without breaking anything. UI-dependent, documentation-dependent.</p>
+  <dl>
+    <dt>Primary goal</dt>
+    <dd>Understand what this cluster is, what they can do with it, and what to do first.</dd>
+    <dt>Frustration trigger</dt>
+    <dd>Unexplained domain terms (HVN, HA, replication). High-consequence actions without educational guardrails.</dd>
+    <dt>Interaction pattern</dt>
+    <dd>Exploratory. Reads everything. Afraid to click destructive-looking actions. Needs progressive disclosure and sequenced guidance.</dd>
+  </dl>
+  <div class="dimensions">Evaluated on: <span>Model &amp; Feedback</span> <span>Reduction &amp; Necessity</span> <span>Risk Audit</span></div>
+</div>
+
+<div class="persona">
+  <h2>6. The Infrequent Overseer</h2>
+  <div class="role">Engineering Manager / Team Lead</div>
+  <p>Checks in weekly or monthly — reviews access patterns, approves policy changes, tracks adoption. Re-learns the interface every visit.</p>
+  <dl>
+    <dt>Primary goal</dt>
+    <dd>Answer "is this cluster healthy, secure, and being used correctly?" in under 30 seconds.</dd>
+    <dt>Frustration trigger</dt>
+    <dd>No temporal context — no activity, no trends, no "what changed since last time." Static facts don't support oversight.</dd>
+    <dt>Interaction pattern</dt>
+    <dd>Infrequent, scan-heavy. Needs the page to surface what matters without requiring deep navigation.</dd>
+  </dl>
+  <div class="dimensions">Evaluated on: <span>Model &amp; Feedback</span> <span>Leverage &amp; Autonomy</span> <span>Reduction &amp; Necessity</span></div>
+</div>
+
+</body>
+</html>

@@ -1,109 +1,98 @@
-I want you to take the following dimensions and use them to evaluate a given design: 
+Evaluate a given design using the following dimensions and structure.
 
-### 1. Mental Model Integrity
-Focus:
-- Affordances
-- Visibility of system state
+---
+
+## Artifact Declaration
+
+Before evaluating, state:
+- **Artifact type:** Screenshot, interactive prototype, live product, or spec document
+- **Scope:** What screen/flow is being evaluated
+- **Limitations:** What states, flows, or behaviors are not observable
+
+This calibrates the confidence of your findings. A screenshot evaluation should not recommend implementation-level changes as if cost is zero.
+
+---
+
+## Evaluation Dimensions
+
+### A. Model & Feedback
+- Affordances and system state visibility
 - Mapping between controls and outcomes
+- Feedback loops and cause-effect clarity
 - Error prevention and recovery
-- Mental model coherence
-Avoid aesthetic commentary.
----
-### 2. Reduction & Necessity
-Focus:
-- Feature necessity
-- Elimination opportunities
-- Signal-to-noise ratio
-- Structural simplicity
-- Long-term maintainability
-Avoid micro-UX nitpicks.
----
-### 3. Heuristic Risk Audit
-Focus:
-- Consistency
-- Feedback clarity
-- Error prevention
-- Undo mechanisms
-- Naming clarity
-- Edge-case friction
-This is the risk radar.
----
-### 4. Spatial & Interaction Harmony
-Focus:
-- Hierarchy
-- Information density
-- Motion meaning
-- Visual rhythm
-- Layout coherence
-- Craftsmanship
-Avoid commenting on business leverage.
----
-### 5. Taste & Ambition
-Focus:
-- Demo-worthiness
-- Emotional impact
-- Product conviction
-- Coherence
-- Whether it feels inevitable
-Reject mediocrity.
----
-### 6. Leverage & Autonomy
-Focus:
-- Scalability
-- System compounding
-- Operational leverage
-- Whether UX increases autonomy
-- Long-term strategic unlock
-Avoid nitpicking layout.
----
-### 7. Cognitive Amplification
-Focus:
-- Immediate feedback loops
-- Cause-effect visibility
-- Manipulability
 - Learnability via interaction
-- Whether the interface helps users think
-Avoid business commentary.
+
+### B. Reduction & Necessity
+- Feature necessity and signal-to-noise ratio
+- Elimination opportunities
+- Structural simplicity
+- Whether the surface area earns its space
+
+*Evaluate this dimension before Leverage. Remove first, then assess what compounds.*
+
+### C. Risk Audit
+- Failure modes and edge-case friction
+- Error prevention and undo mechanisms
+- Destructive action guardrails
+- Naming clarity for consequential actions
+- Consistency violations
+
+*Focused exclusively on what can go wrong — not general model quality.*
+
+### D. Spatial & Craft
+- Hierarchy and information density
+- Layout coherence and visual rhythm
+- Design intentionality — does every element serve a stated purpose?
+- Evidence of deliberate decisions vs. defaults
+
+### E. Leverage & Autonomy
+- Automation support and self-service capability
+- Compounding value and operational scale
+- Whether the UX increases user independence over time
+
+*Evaluate on the surviving surface after Reduction, not on the page as-is.*
+
 ---
-## Required Output Structure
-For EACH dimension:
-- 3 Strengths (specific, non-generic)
-- 3 Weaknesses (specific, non-repetitive)
-- UX Score (1–10)
-- 1 Highest-Leverage Improvement
-Scoring Calibration:
-- 5–6 = acceptable but flawed
-- 7–8 = strong
-- 9–10 = world-class
-Do not inflate scores.
+
+## Persona Evaluation Structure
+
+For each persona, evaluate only the **3 most relevant dimensions** — not all 5.
+
+For each dimension:
+- **Severity tag:** Critical (blocking/harmful), Notable (meaningful gap), or Minor (improvement opportunity)
+- **Confidence tag:** High confidence (directly observable) or Speculative (inferred, needs validation)
+- **Observations:** What matters — positive or negative. No forced counts. Minimum 2 observations, no enforced split between strengths and weaknesses.
+- **1 fix:** Highest-leverage improvement for this persona + dimension
+
 ---
-## After Persona Reviews
-Provide:
+
+## Cross-Persona Synthesis
+
 ### 1. Disagreement Map
-Where personas conflict.
+Where personas conflict, and what the conflict implies for design direction.
+
 ### 2. Structural Flaw
-Highest-confidence systemic weakness.
-### 3. 20% Simplification
-One change that improves clarity or power by ~20%.
+Highest-confidence systemic weakness across all personas.
+
+### 3. Highest-ROI Single Change
+One change that produces the greatest improvement across the most personas.
+
 ### 4. Strategic Recommendation
-- Ship as-is
-- Iterate
-- Simplify
-- Re-architect
-- Kill feature
-Must choose one.
+- **Primary:** Ship as-is / Iterate / Simplify / Re-architect / Kill feature
+- **Secondary (optional):** A compound recommendation if the finding warrants it
+- One-line rationale for each.
+
 ---
+
 ## Behavioral Rules
 - Be critical.
 - Avoid repeating the same critique across personas.
-- Avoid fluff.
-- No generic UX advice.
-- Tie critiques directly to described feature behavior.
+- No generic UX advice — tie critiques to observed feature behavior.
+- No filler. If a dimension has nothing meaningful to say for a persona, don't evaluate it.
 - Optimize for long-term product excellence.
+- State confidence explicitly when recommending changes that depend on unobserved states.
+
 ---
+
 ## Output Tone
-Concise.
-Surgical.
-Actionable.
-No hedging.
-No excessive praise.
+Concise. Surgical. Actionable. No hedging. No excessive praise.
