@@ -1,67 +1,20 @@
-# Evaluation Criteria
+# Design Principles Evaluation Matrix (2026)
 
-## 1. End to End (E2E) / In-N-Out
+## Scale Definitions
 
-**Definition:** Evaluates how well the solution guides the user through the entire journey, including handoffs between different parts of the product.
+- **N/A:** The principle is not relevant to the experience.
+- **0 - Missing:** The principle is entirely absent and unacceptably so.
+- **1 - Partial:** The principle is present in a minimal way. There is room for improvement.
+- **2 - Effective:** The principle is well-implemented and contributes positively to the user experience. The design meets the expected standard.
 
-- **Score 0:** The solution does not instruct or assist the user on next steps.
+## Criteria Matrix
 
-- **Score 1:** The solution somewhat assists the user on next steps. The user must take additional unguided steps to complete their Job to be Done (JTBD).
-
-- **Score 2:** The solution provides a smooth handoff to the next step of the experience, whether inside or outside of the core products.
-
-## 2. Unified and Consistent
-
-**Definition:** Consistency within the given product or workspace, focusing on design system adherence.
-
-- **Score 0:** Most important components of the experience are not from the design system(s) and/or do not follow conventional patterns.
-
-- **Score 1:** Most important components and workflows adhere to known standards. Some elements may be non-standard.
-
-- **Score 2:** The full experience uses known patterns and components. Any custom components have been thoroughly vetted.
-
-## 3. Content Clarity and Accuracy
-
-**Definition:** The quality of the copy, technical accuracy, and the effectiveness of calls to action (CTAs).
-
-- **Score 0:** Content does not describe the purpose of the experience; CTAs are generic and non-descriptive.
-
-- **Score 1:** The content or CTAs only partially describe their intended message.
-
-- **Score 2:** Content describes the workflow and CTAs adequately describe the outcomes.
-
-## 4. The Right Interface for the Right JTBD
-
-**Definition:** Whether the chosen interface (API/CLI/UI) is appropriate for the user's specific task.
-
-- **Score 0:** The interface is a generic way to interact with the product. It is a reproduction of another interface and adds no substantial value. It fails to leverage the specific interface type.
-
-- **Score 1:** The interface is adequate for some Jobs to be Done (JTBDs), but the user will need help completing their overall task.
-
-- **Score 2:** The experience balances speed, control, and convenience for all given JTBDs and personas.
-
-## 5. Trusted Partner / Guide & Recommend
-
-**Definition:** How well the product guides the user toward best practices rather than just offering options.
-
-- **Score 0:** Provides multiple options to accomplish a task but gives no recommendation on best practices.
-
-- **Score 1:** Provides some guidance on best practices, but the user might struggle to find the right options for their specific task.
-
-- **Score 2:** Takes into account user preferences and needs. It recommends an approved/efficient pattern and clearly articulates the value.
-
-## 6. Design for the Right Scale
-
-**Definition:** Optimization for average, edge, and projected growth use cases.
-
-- **Score 0:** The solution does not work for average use or edge cases.
-
-- **Score 1:** The solution accommodates average use, but not edge cases (or vice versa).
-
-- **Score 2:** The design is flexible and accommodates all common and edge cases. The solution is reasonably future-proofed.
-
-## 7. Automation and Low Interaction (TBD)
-
-**Definition:** Focuses on alerts, notifications, task frequency, and reducing manual repetition.
-
-**Note:** Criteria for this section are currently under development (TBD).
+| Principle | N/A | 0 - Missing | 1 - Partial | 2 - Effective |
+|---|---|---|---|---|
+| End to end. In and out of our products. (E2E. In-N-Out.) | The principle is not relevant to the experience. | The solution does not instruct or assist the user on next steps if they are outside of the scope of the solution. | The solution somewhat assists the user on next steps. The user will need to take additional unguided steps to complete their JTBD. | The solution is able to provide a smooth handoff to the next step of the experience, inside or outside of our products. |
+| Unified and consistent (consistency within the given product/space) | The principle is not relevant to the experience. | Most important components of the experience are not from the design system(s) and/or do not follow conventional patterns. | Most important components and workflows adhere to known standards. Some elements may not be standard. | The full experience uses known patterns and components. Any custom components have been thoroughly vetted. |
+| Content is clear and technically accurate / Decent content | The principle is not relevant to the experience. | The content does not describe the purpose of the experience. CTAs are generic and non-descriptive. | The content or CTAs partially describe their intended message. | Content describes the workflow and CTAs adequately describe the outcomes. |
+| The right interface for the right JTBD | The principle is not relevant to the experience. | The interface is a generic way to interact with the product. It is a reproduction of another interface and does not add substantial value. The experience does not fully leverage the interface (API/CLI/UI). | The interface is adequate for some JTBDs. The user will need help in completing their JTBD. | The experience balances speed, control and convenience for all given JTBDs and personas. |
+| We are trusted partners / Guide and recommend | The principle is not relevant to the experience. | The experience provides multiple options to accomplish a JTBD, but does not give a recommendation on best practices. | The experience provides some guidance on best practices. The user might struggle to find the right options for their JTBD. | The experience takes into account a user's preferences and needs. It recommends an approved and efficient pattern and clearly articulates the value. |
+| Design for the right scale | The principle is not relevant to the experience. | The solution does not work for average use or edge cases. | The solution accommodates average use, but not edge cases, or vice versa. | The design is flexible and can accommodate all common and edge cases. The solution is reasonably future-proofed. |
+| Design for automation and low interaction (alerts and notifications, frequency of tasks, repetition of tasks, manual tasks) | The principle is not relevant to the experience. | TBD | TBD | TBD |
